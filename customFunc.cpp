@@ -233,8 +233,6 @@ int lower_bound_my(vector<int>& arr, int x) {
 
 
 
-
-
 // string s = "Hello World";
 // size_t pos = s.find("World");
 // if (pos != string::npos) {
@@ -242,10 +240,6 @@ int lower_bound_my(vector<int>& arr, int x) {
 // }
 
 int main(){
-    test{
-        int a,b;
-        cin>>a>>b;
-        cout<<multiply_iterative(a,b)<<endl;
-    }
+
     return 0;
 }
