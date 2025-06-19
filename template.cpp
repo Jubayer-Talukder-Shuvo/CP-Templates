@@ -15,6 +15,8 @@ using namespace std;
 #define setbit(x,n) (x=(x|(1LL<<n)))
 #define resetbit(x,n) (x=(x&(~(1LL<<n))))
 
+
+//this a change
 void solve(){
 
 
