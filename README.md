@@ -1,2 +1,2 @@
 # CP-Templates
-This is my cp template
+This is my CP template
