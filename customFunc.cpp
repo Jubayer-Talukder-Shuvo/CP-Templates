@@ -127,6 +127,34 @@ vector<int> getFactors(int n) {
     return factors;
 }
 
+void primeFactorCount(int n) {
+    unordered_map<int, int> factors;
+
+    // Divide by 2 until odd
+    while (n % 2 == 0) {
+        factors[2]++;
+        n /= 2;
+    }
+
+    // Divide by odd numbers starting from 3
+    for (int i = 3; i * i <= n; i += 2) {
+        while (n % i == 0) {
+            factors[i]++;
+            n /= i;
+        }
+    }
+
+    // If n is a prime greater than sqrt(original_n)
+    if (n > 1) {
+        factors[n]++;
+    }
+
+    // Output result
+    for (auto &p : factors) {
+        cout << p.first << " --> " << p.second << '\n';
+    }
+}
+
 //bit manipulation
 void printBinary(ll num) {
     for (ll i = 31; i >= 0; i--) {
