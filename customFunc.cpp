@@ -8,31 +8,30 @@ using namespace std;
 #define vi  vector<int>
 
 //Number Theory
-void sieve(int n) {
-    vector<bool> isPrime(n + 1, true); 
-    isPrime[0] = isPrime[1] = false;   
+void sieve(int n){
+    vector<bool> isPrime(n+1,true); 
+    isPrime[0]=isPrime[1]=false;   
 
-    for (int i = 2; i * i <= n; i++) {
-        if (isPrime[i]) {
-
-            for (int j = i * i; j <= n; j += i) {
-                isPrime[j] = false;
+    for(int i=2; i*i<=n; i++){
+        if(isPrime[i]){
+            for(int j=i*i; j<=n; j+=i){
+                isPrime[j]=false;
             }
         }
     }
 
 
-    for (int i = 2; i <= n; i++) {
-        if (isPrime[i]) {
+    for (int i=2; i<=n; i++){
+        if(isPrime[i]){
             cout << i << " ";
         }
     }
     cout << endl;
 }
 
-long long factorial(int n) {
+long long factorial(int n){
     long long res=1;
-    for (int i=2; i<=n; ++i) {
+    for (int i=2; i<=n; ++i){
         res*=i;
     }
     return res;
@@ -64,7 +63,7 @@ int multiplyMyFunc(int n, int x){
     return ans;
 }
 
-int multiply_iterative(int n, int x) {
+int multiply_iterative(int n, int x){
     int result=1;
     while(x>0) {
         if(x%2==1) result*=n;
@@ -74,19 +73,19 @@ int multiply_iterative(int n, int x) {
     return result;
 }
 
-int gcd(int a, int b) {
-    while (b) {
+int gcd(int a, int b){
+    while (b){
         a %= b;
         swap(a, b);
     }
     return a;
 }
 
-long long intLogFloor(long long a, long long n) {
+long long intLogFloor(long long a, long long n){
     if (a<=1 || n<1) return 0;
 
     long long res=0, power=1;
-    while (power<=n/a) {
+    while (power<=n/a){
         power*=a;
         res++;
     }
@@ -94,10 +93,10 @@ long long intLogFloor(long long a, long long n) {
 }
 
 long long intLogCeil(long long a, long long n) {
-    if (a <= 1 || n < 1) return 0;
+    if (a<=1 || n<1) return 0;
 
-    long long res = 0, power = 1;
-    while (power < n) {
+    long long res=0, power=1;
+    while (power<n){
         power *= a;
         res++;
     }
@@ -105,19 +104,19 @@ long long intLogCeil(long long a, long long n) {
 }
 
 long long intLogRound(long long a, long long n) {
-    long long floorVal = intLogFloor(a, n);
-    long long ceilVal = intLogCeil(a, n);
+    long long floorVal=intLogFloor(a,n);
+    long long ceilVal=intLogCeil(a,n);
 
     // Compare distances between n and a^floorVal vs a^ceilVal
-    long long lowDiff = n - pow(a, floorVal);
-    long long highDiff = pow(a, ceilVal) - n;
+    long long lowDiff=n-pow(a,floorVal);
+    long long highDiff=pow(a,ceilVal)-n;
 
-    return (highDiff < lowDiff) ? ceilVal : floorVal;
+    return (highDiff<lowDiff) ? ceilVal:floorVal;
 }
 
-vector<int> getFactors(int n) {
+vector<int> getFactors(int n){
     vector<int> factors;
-    for(int i=1; i*i<=n; i++) {
+    for(int i=1; i*i<=n; i++){
         if(n%i==0) {
             factors.push_back(i);
             if(i!=n/i) factors.push_back(n/i);
@@ -127,38 +126,38 @@ vector<int> getFactors(int n) {
     return factors;
 }
 
-void primeFactorCount(int n) {
-    unordered_map<int, int> factors;
+void primeFactorCount(int n){
+    unordered_map<int,int> factors;
 
     // Divide by 2 until odd
-    while (n % 2 == 0) {
+    while(n%2==0){
         factors[2]++;
-        n /= 2;
+        n/=2;
     }
 
     // Divide by odd numbers starting from 3
-    for (int i = 3; i * i <= n; i += 2) {
-        while (n % i == 0) {
+    for(int i=3; i*i<=n; i+=2){
+        while (n%i==0) {
             factors[i]++;
-            n /= i;
+            n/=i;
         }
     }
 
     // If n is a prime greater than sqrt(original_n)
-    if (n > 1) {
+    if(n>1){
         factors[n]++;
     }
 
     // Output result
-    for (auto &p : factors) {
-        cout << p.first << " --> " << p.second << '\n';
+    for(auto &p:factors){
+        cout<<p.first<<" --> "<< p.second<<'\n';
     }
 }
 
 //bit manipulation
-void printBinary(ll num) {
-    for (ll i = 31; i >= 0; i--) {
-        cout << ((num >> i) & 1);
+void printBinary(ll num){
+    for (ll i=31; i>=0; i--){
+        cout<<((num>>i)&1);
     }
     cout<<endl;
 }
@@ -211,33 +210,33 @@ bool balanced_checker(string s){
     return true;
 }
 
-int secondMinimum(const vector<int>& v) {
-    int min1 = INT_MAX, min2 = INT_MAX;
+int secondMinimum(const vector<int>& v){
+    int min1=INT_MAX, min2=INT_MAX;
 
-    for (int num : v) {
-        if (num < min1) {
-            min2 = min1;
-            min1 = num;
-        } else if (num < min2 && num > min1) {
-            min2 = num;
+    for(int num:v) {
+        if(num<min1) {
+            min2=min1;
+            min1=num;
+        }else if(num<min2 && num>min1) {
+            min2=num;
         }
     }
 
-    if (min2 == INT_MAX) return min1; 
+    if (min2==INT_MAX) return min1; 
     return min2;
 }
 
 void print_vect(const vector<int>& v){
-    for(auto &i : v){
-        cout << i << " ";
+    for(auto &i:v){
+        cout<<i<< " ";
     }
-    cout << endl;
+    cout<<endl;
 }
 
 bool isPalindrome(const vector<int>& v) {
-    int l = 0, r = v.size() - 1;
-    while (l < r) {
-        if (v[l] != v[r])
+    int l=0, r=v.size()-1;
+    while(l<r){
+        if(v[l]!=v[r])
             return false;
         l++;
         r--;
