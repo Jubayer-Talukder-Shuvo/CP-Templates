@@ -48,14 +48,14 @@ bool isPrime(int n){
     return true;
 }
 
-int multiply(int n, int x){
+int multiplyMyFunc(int n, int x){
     if(x==0) return 1;
     if(x==1) return n;
     int ans=n*n;
     int cnt=2;
     while(1){
         if(cnt*2 >= x){
-            ans=ans*multiply(n, x-cnt);
+            ans=ans*multiplyMyFunc(n, x-cnt);
             break;
         }
         ans*=ans;
