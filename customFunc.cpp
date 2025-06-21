@@ -7,6 +7,9 @@ using namespace std;
 #define gcin(s) getline(cin, s);
 #define vi  vector<int>
 
+//fold shortcut Ctrl+k, Ctrl+0
+//unfold shortcut Ctrl+k, Ctrl+j
+
 //Number Theory
 void sieve(int n){
     vector<bool> isPrime(n+1,true); 
