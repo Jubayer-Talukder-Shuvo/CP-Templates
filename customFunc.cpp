@@ -273,8 +273,8 @@ int upper_bound_my(vector<int>& arr, int x) {
     return l;
 }
 
-//to find element <= use lowerbound if(it!=a.begin()) it-- else "not found";
-//to find element < use upperbound if(it!=a.begin()) it-- else "not found";
+//to find element <= use upperbound if(it!=a.begin()) it-- else "not found";
+//to find element < use lowerbound if(it!=a.begin()) it-- else "not found";
 
 
 // string s = "Hello World";
