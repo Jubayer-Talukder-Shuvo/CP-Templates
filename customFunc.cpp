@@ -84,6 +84,10 @@ int gcd(int a, int b){
     return a;
 }
 
+ll lcm(ll a, ll b) {
+    return(a*b) /__gcd(a,b);
+}
+
 long long intLogFloor(long long a, long long n){
     if (a<=1 || n<1) return 0;
 
