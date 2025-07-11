@@ -14,7 +14,8 @@ using namespace std;
 //bit manipulation
 #define checkbit(x,n) (x&(1LL<<n))
 #define setbit(x,n) (x=(x|(1LL<<n)))
-#define resetbit(x,n) (x=(x&(~(1LL<<n))))
+#define unsetbit(x,n) (x=(x&(~(1LL<<n))))
+#define togglebit(x,n) (x=(x^(1LL<<n)))
 
 void solve(){
 
