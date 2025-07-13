@@ -99,7 +99,7 @@ long long intLogFloor(long long a, long long n){
     return res;
 }
 
-long long intLogCeil(long long a, long long n) {
+long long intLogCeil(long long a, long long n){
     if (a<=1 || n<1) return 0;
 
     long long res=0, power=1;
@@ -110,7 +110,7 @@ long long intLogCeil(long long a, long long n) {
     return res;
 }
 
-long long intLogRound(long long a, long long n) {
+long long intLogRound(long long a, long long n){
     long long floorVal=intLogFloor(a,n);
     long long ceilVal=intLogCeil(a,n);
 
@@ -144,7 +144,7 @@ void primeFactorCount(int n){
 
     // Divide by odd numbers starting from 3
     for(int i=3; i*i<=n; i+=2){
-        while (n%i==0) {
+        while (n%i==0){
             factors[i]++;
             n/=i;
         }
@@ -224,7 +224,7 @@ int secondMinimum(const vector<int>& v){
         if(num<min1) {
             min2=min1;
             min1=num;
-        }else if(num<min2 && num>min1) {
+        }else if(num<min2 && num>min1){
             min2=num;
         }
     }
@@ -240,7 +240,7 @@ void print_vect(const vector<int>& v){
     cout<<endl;
 }
 
-bool isPalindrome(const vector<int>& v) {
+bool isPalindrome(const vector<int>& v){
     int l=0, r=v.size()-1;
     while(l<r){
         if(v[l]!=v[r])
@@ -252,7 +252,7 @@ bool isPalindrome(const vector<int>& v) {
 }
 
 //binary search
-int lower_bound_my(vector<int>& arr, int x) {
+int lower_bound_my(vector<int>& arr, int x){
     int l=0, r=arr.size();
     while(l<r){
         int mid=l+(r-l)/2;
@@ -264,7 +264,7 @@ int lower_bound_my(vector<int>& arr, int x) {
     }
     return l;
 }
-int upper_bound_my(vector<int>& arr, int x) {
+int upper_bound_my(vector<int>& arr, int x){
     int l=0, r=arr.size();
     while(l<r){
         int mid=l+(r-l)/2;
