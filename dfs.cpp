@@ -10,7 +10,7 @@ void dfs(int vertex){
     //Take action on vertex after entering the vertex
     visited[vertex]=true; 
     for(int child : g[vertex]){
-    if(visited[child]) continue;
+        if(visited[child]) continue;
         //Take action on child before entering the child node
 
         dfs(child);
