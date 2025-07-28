@@ -179,6 +179,17 @@ void printBinary(ll num){
     cout<<endl;
 }
 
+int binary_length(int n){
+    for(int i=31; i>=0; i--){
+        if(checkbit(n, i)){
+            return i+1;
+        }
+    }
+    return 1;
+}
+
+
+
 //Others
 void Kadanes(){
     int n;
