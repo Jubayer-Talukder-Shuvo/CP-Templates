@@ -98,7 +98,7 @@ ll lcm(ll a, ll b) {
     return(a*b) /__gcd(a,b);
 }
 
-long long intLogFloor(long long a, long long n){
+long long intLogFloor(long long a, long long n){ // a is the base
     if (a<=1 || n<1) return 0;
 
     long long res=0, power=1;
