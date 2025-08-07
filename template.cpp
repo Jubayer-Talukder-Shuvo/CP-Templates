@@ -11,6 +11,7 @@ using namespace std;
 #define vll vector<long long>
 #define vv(name, type, rows, cols) vector<vector<type>> name(rows, vector<type>(cols))
 #define fastio ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
+#define g(i) get<i>
 //bit manipulation
 #define checkbit(x,n) (x&(1LL<<n))
 #define setbit(x,n) (x=(x|(1LL<<n)))
