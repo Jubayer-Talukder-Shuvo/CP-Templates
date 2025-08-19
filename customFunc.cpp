@@ -299,6 +299,37 @@ int upper_bound_my(vector<int>& arr, int x){
     return l;
 }
 
+//set
+vector<int> getIntersection(int a, int b, int c, int d){
+    if(a>b) swap(a, b);
+    if(c>d) swap(c, d);
+
+    int l=max(a, c);
+    int r=min(b, d);
+
+    if(l<=r) return {l, r};
+    return {};
+}
+
+vector<pair<int,int>> getUnion(int a, int b, int c, int d){
+    if(a>b) swap(a, b);
+    if(c>d) swap(c, d);
+    int l = max(a, c);
+    int r = min(b, d);
+
+    if (l <= r) {
+
+        return { {min(a, c), max(b, d)} };
+    } else {
+
+        if (a < c) return { {a, b}, {c, d} };
+        else return { {c, d}, {a, b} };
+    }
+}
+
+
+
+
 //to find element <= use upperbound if(it!=a.begin()) it-- else "not found";
 //to find element < use lowerbound if(it!=a.begin()) it-- else "not found";
 
