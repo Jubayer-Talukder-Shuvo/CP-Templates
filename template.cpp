@@ -12,6 +12,7 @@ using namespace std;
 #define vv(name, type, rows, cols) vector<vector<type>> name(rows, vector<type>(cols))
 #define fastio ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
 #define ge(i) get<i>
+#define edge(v) g[v].size()
 //bit manipulation
 #define checkbit(x,n) (x&(1LL<<n))
 #define setbit(x,n) (x=(x|(1LL<<n)))
