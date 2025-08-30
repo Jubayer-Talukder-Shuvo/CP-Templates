@@ -77,7 +77,7 @@ int multiplyMyFunc(int n, int x){
     return ans;
 }
 
-int multiply_iterative(int n, int x){
+int multiIter(int n, int x){
     int result=1;
     while(x>0) {
         if(x%2==1) result*=n;
