@@ -13,6 +13,8 @@ using namespace std;
 #define fastio ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
 #define ge(i) get<i>
 #define edge(v) g[v].size()
+#define yes cout<<"YES"<<endl
+#define no cout<<"NO"<<endl;
 //bit manipulation
 #define checkbit(x,n) (x&(1LL<<n))
 #define setbit(x,n) (x=(x|(1LL<<n)))
