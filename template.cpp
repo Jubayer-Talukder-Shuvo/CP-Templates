@@ -15,6 +15,7 @@ using namespace std;
 #define edge(v) g[v].size()
 #define yes cout<<"YES"<<endl
 #define no cout<<"NO"<<endl;
+#define pvec(a) do{for(auto &x:a) cout<<x<<" "; cout<<endl;}while(0)
 //bit manipulation
 #define checkbit(x,n) (x&(1LL<<n))
 #define setbit(x,n) (x=(x|(1LL<<n)))
@@ -22,7 +23,6 @@ using namespace std;
 #define togglebit(x,n) (x=(x^(1LL<<n)))
 
 void solve(){
-
 
 }
 
