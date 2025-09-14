@@ -11,7 +11,6 @@ using namespace std;
 #define vll vector<long long>
 #define vv(name, type, rows, cols) vector<vector<type>> name(rows, vector<type>(cols))
 #define fastio ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
-#define ge(i) get<i> // get<i>(t);
 #define edge(v) g[v].size()
 #define yes cout<<"YES"<<endl
 #define no cout<<"NO"<<endl;
