@@ -22,6 +22,27 @@ using namespace std;
 //unfold shortcut Ctrl+k, Ctrl+j
 
 //Number Theory
+
+ll powerMod(ll a, ll b){
+    if(b==0) return 1;
+
+    if(b%2==0){
+        ll x = powerMod(a, b/2);
+        return (x*x)%M;
+    }
+    else {
+        ll x = powerMod(a, b/2);
+        return ((x*x)%M * a)%M;
+    }
+
+    return 0;
+}
+
+ll inverseMod(ll a){ // this function depends on the above powerMod function
+    return powerMod(a, M-2);
+}
+
+
 void sieve(int n){
     vector<bool> isPrime(n+1,true); 
     isPrime[0]=isPrime[1]=false;   
