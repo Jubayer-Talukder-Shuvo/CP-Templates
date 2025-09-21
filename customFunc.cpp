@@ -23,6 +23,11 @@ using namespace std;
 
 //Number Theory
 
+
+//int n=__builtin_clz(5); // number of leading zero helpful to find binary length of a number
+
+
+
 ll powerMod(ll a, ll b){
     if(b==0) return 1;
 
