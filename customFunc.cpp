@@ -24,7 +24,6 @@ using namespace std;
 //Number Theory
 
 
-//int n=__builtin_clz(5); // number of leading zero helpful to find binary length of a number
 
 
 
@@ -214,6 +213,9 @@ int binary_length(int n){
     }
     return 1;
 }
+
+
+int n=__builtin_clz(5); //this and the above function returns the length of a number in binary form
 
 
 
