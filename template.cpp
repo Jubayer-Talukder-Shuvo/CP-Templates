@@ -13,7 +13,7 @@ using namespace std;
 #define fastio ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
 #define edge(v) g[v].size()
 #define yes cout<<"YES"<<endl
-#define no cout<<"NO"<<endl;
+#define no cout<<"NO"<<endl
 #define pvec(a) do{for(auto &x:a) cout<<x<<" "; cout<<endl;}while(0)
 //bit manipulation
 #define checkbit(x,n) (x&(1LL<<n))
