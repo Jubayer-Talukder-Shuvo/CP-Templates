@@ -215,7 +215,7 @@ int binary_length(int n){
 }
 
 
-int n=__builtin_clz(5); //this and the above function returns the length of a number in binary form
+int bitlength=32-__builtin_clz(n) //this and the above function returns the length of a number in binary form
 
 
 
