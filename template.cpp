@@ -21,7 +21,7 @@ using namespace std;
 #define unsetbit(x,n) (x=(x&(~(1LL<<n))))
 #define togglebit(x,n) (x=(x^(1LL<<n)))
 
-const ll MOD = 1000000007;
+const ll M = 1000000007;
 
 
 void solve(){
