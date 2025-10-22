@@ -12,8 +12,8 @@ using namespace std;
 #define vv(name, type, rows, cols) vector<vector<type>> name(rows, vector<type>(cols))
 #define fastio ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
 #define edge(v) g[v].size()
-#define yes cout<<"YES\n";
-#define no cout<<"NO\n";
+#define yes cout<<"YES\n"
+#define no cout<<"NO\n"
 #define pvec(a) do{for(auto &x:a) cout<<x<<" "; cout<<endl;}while(0)
 //bit manipulation
 #define checkbit(x,n) (x&(1LL<<n))
