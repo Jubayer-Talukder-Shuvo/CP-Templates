@@ -1,3 +1,4 @@
+//solution of cses subordinates problem
 #include <bits/stdc++.h>
 using namespace std;
 #define f(i, st, ed) for(int i=st; i<=ed; i++)
@@ -23,19 +24,18 @@ using namespace std;
  
 const ll M = 1000000007;
 const int N = 2e5+10;
+ 
 vector<int> g[N];
+int dp[N];
  
-int depth[N];
- 
-void dfs(int vertex, int parent=-1){
+void dfs(int vertex, int parent){
  
     for(int &child:g[vertex]){
         if(child==parent) continue;
-        depth[child]=depth[vertex]+1;
         dfs(child, vertex);
+        dp[vertex]+=dp[child]+1;
  
     }
- 
  
 }
  
@@ -46,36 +46,17 @@ void solve(){
     int n;
     cin>>n;
  
-    f(i, 1, n-1){
-        int v1, v2;
-        cin>>v1>>v2;
-        g[v1].pb(v2);
-        g[v2].pb(v1);
+    f(i, 2, n){
+        int x; cin>>x;
+        g[i].pb(x);
+        g[x].pb(i);
     }
  
-    dfs(1);
-    int mx_depth=-1;
-    int mx_node=-1;
-    f(i, 1, n){
-        if(mx_depth<depth[i]){
-            mx_depth=depth[i];
-            mx_node=i;
-        }
-        depth[i]=0;
-    }
-    
-    dfs(mx_node);
-    mx_depth=-1;
-    mx_node=-1;
-    f(i, 1, n){
-        if(mx_depth<depth[i]){
-            mx_depth=depth[i];
-            mx_node=i;
-        }
-    }
+    dfs(1, 0);
  
-    cout<<mx_depth<<endl;
+    f(i, 1, n) cout<<dp[i]<<" ";
  
+    cout<<endl;
 }
  
 int main(){

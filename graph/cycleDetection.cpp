@@ -1,3 +1,4 @@
+//solution of cses round trip problem
 #include <bits/stdc++.h>
 using namespace std;
 #define f(i, st, ed) for(int i=st; i<=ed; i++)
@@ -22,20 +23,39 @@ using namespace std;
 #define togglebit(x,n) (x=(x^(1LL<<n)))
  
 const ll M = 1000000007;
-const int N = 2e5+10;
+const int N = 1e5+10;
+ 
 vector<int> g[N];
+int parents[N];
+bool visited[N];
  
-int depth[N];
  
-void dfs(int vertex, int parent=-1){
+int start=-1, endd=-1;
+ 
+bool dfs(int vertex, int par){
+    parents[vertex]=par;
+    visited[vertex]=true;
+ 
+    bool isCycle=false;
  
     for(int &child:g[vertex]){
-        if(child==parent) continue;
-        depth[child]=depth[vertex]+1;
-        dfs(child, vertex);
+        if(child==par) continue;
+ 
+        if(visited[child]){
+            start=vertex;
+            endd=child;
+            return true;
+ 
+        }else{
+ 
+            isCycle|=dfs(child, vertex);
+ 
+        }
  
     }
  
+ 
+    return isCycle;
  
 }
  
@@ -43,39 +63,48 @@ void dfs(int vertex, int parent=-1){
  
  
 void solve(){
-    int n;
-    cin>>n;
- 
-    f(i, 1, n-1){
+    int n, m;
+    cin>>n>>m;
+    
+    f(i, 1, m){
         int v1, v2;
         cin>>v1>>v2;
         g[v1].pb(v2);
         g[v2].pb(v1);
     }
  
-    dfs(1);
-    int mx_depth=-1;
-    int mx_node=-1;
+    bool ok=false;
+ 
+ 
+ 
     f(i, 1, n){
-        if(mx_depth<depth[i]){
-            mx_depth=depth[i];
-            mx_node=i;
+        if(!visited[i]){
+            if(dfs(i, -1)==true){
+                ok=true;
+                break;
+            }
         }
-        depth[i]=0;
     }
+    if(!ok){
+        cout<<"IMPOSSIBLE\n";
+        return;
+    }
+ 
+ 
+ 
+    vi cycle;
+ 
+    cycle.push_back(start);
+ 
+    for(int v=endd; v!=start; v=parents[v]) cycle.push_back(v);
     
-    dfs(mx_node);
-    mx_depth=-1;
-    mx_node=-1;
-    f(i, 1, n){
-        if(mx_depth<depth[i]){
-            mx_depth=depth[i];
-            mx_node=i;
-        }
-    }
+    cycle.push_back(start);
  
-    cout<<mx_depth<<endl;
  
+    cout<<cycle.size()<<endl;
+    for(int &i:cycle) cout<<i<<' ';
+ 
+    cout<<endl;
 }
  
 int main(){

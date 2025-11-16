@@ -1,0 +1,1 @@
+{"name":"Local: howManyConnectedComponents","url":"d:\\CP\\graph\\howManyConnectedComponents.cpp","tests":[{"id":1763275945571,"input":"8 5\n1 2\n2 3\n2 4\n3 5\n6 7\n","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CP\\graph\\howManyConnectedComponents.cpp","group":"local","local":true}
