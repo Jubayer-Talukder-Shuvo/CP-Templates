@@ -14,6 +14,7 @@ using namespace std;
 #define edge(v) g[v].size()
 #define yes cout<<"YES\n"
 #define no cout<<"NO\n"
+#define nl '\n'
 #define pvec(a) do{for(auto &x:a) cout<<x<<" "; cout<<endl;}while(0)
 //bit manipulation
 #define checkbit(x,n) (x&(1LL<<n))
@@ -25,7 +26,7 @@ const ll M = 1000000007;
 
 
 void solve(){
-
+    f(i, 1, 3) cout<<"shuvo"<<nl;
 }
 
 int main(){
